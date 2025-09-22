@@ -1,0 +1,19 @@
+{
+  "name": "node-js-repo",
+  "version": "1.0.0",
+  "description": "node js crash course tutorial",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nickonyi/Node-js-repo.git"
+  },
+  "author": "nick_onyi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nickonyi/Node-js-repo/issues"
+  },
+  "homepage": "https://github.com/nickonyi/Node-js-repo#readme"
+}
