@@ -14,6 +14,10 @@ const users = [
     id: 3,
     name: "Jim Doe",
   },
+  {
+    id: 4,
+    name: "Jenifer Doe",
+  },
 ];
 
 const server = createServer((req, res) => {
