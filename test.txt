@@ -1,1 +1,2 @@
-I am writing to this file from the console!!
+This is a test file
+This is an appended message!
