@@ -1,6 +1,6 @@
 import fs from "fs";
 
-fs.readFile("./test.txt", "utf8", (err, data) => {
-  console.log(data);
+fs.readFile("./test.txt", "utf8", (data, err) => {
   if (err) throw err;
+  console.log(data);
 });
