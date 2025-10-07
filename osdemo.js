@@ -10,4 +10,4 @@ console.log(os.freemem());
 
 //cpus
 console.log(os.cpus().length);
-console.log("yellow");
+console.log("yellowop");
