@@ -1,0 +1,22 @@
+{
+  "name": "node-js-repo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type":"module",
+  "scripts": {
+  "start":"node app.js",
+  "dev":"node --watch app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nickonyi/Node-js-repo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nickonyi/Node-js-repo/issues"
+  },
+  "homepage": "https://github.com/nickonyi/Node-js-repo#readme"
+}
