@@ -1,17 +1,15 @@
 {
-<<<<<<< HEAD
-  "devDependencies": {
-    "dotenv": "^17.2.3"
-  }
-=======
   "name": "node-js-repo",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "type": "module",
+  "main": "app.js",
+  "dependencies": {
+    "dotenv": "^17.2.3"
+  },
+  "devDependencies": {},
   "scripts": {
-  "start":"node app.js",
-  "dev":"node --watch app"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -24,5 +22,4 @@
     "url": "https://github.com/nickonyi/Node-js-repo/issues"
   },
   "homepage": "https://github.com/nickonyi/Node-js-repo#readme"
->>>>>>> b7389a6aff74603641bea5b2deb5d024b0d38e24
 }
