@@ -1,8 +1,15 @@
 import http from "http";
+import dotenv from "dotenv";
+dotenv.config();
 
-const PORT = 3000;
+const PORT = parseInt(process.env.PORT);
+console.log(typeof PORT);
 
 const server = http.createServer((req, res) => {
-  res.write("hellow world!");
-  res.end();
+  res.writeHead(200, { "Content-Type": "text/html" });
+  res.end("<h1>Hello world</h1>");
+});
+
+server.listen(PORT, () => {
+  console.log(`Listening at port:${PORT}`);
 });
