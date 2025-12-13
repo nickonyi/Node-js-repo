@@ -2,10 +2,11 @@ import http from "http";
 import dotenv from "dotenv";
 dotenv.config();
 
-const PORT = parseInt(process.env.PORT);
-console.log(typeof PORT);
+const PORT = process.env.PORT;
 
 const server = http.createServer((req, res) => {
+  console.log(req);
+
   res.writeHead(200, { "Content-Type": "text/html" });
   res.end("<h1>Hello world</h1>");
 });
