@@ -27,7 +27,7 @@ const server = createServer(async (req, res) => {
       res.write(data);
       res.end();
     } else {
-      throw new Error("Method not allowed!");
+      throw new Error("Method ndot allowed!");
     }
   } catch (error) {
     res.writeHead(500, { "Content-Type": "text/html" });
