@@ -9,6 +9,8 @@ const users = [
 //logger middleware
 const logger = (req, res, next) => {
   console.log(`${req.method}  ${req.url}`);
+
+  console.log(users);
   next();
 };
 
@@ -38,6 +40,22 @@ const getUserByIdRouteHandler = (req, res) => {
   }
 };
 
+//handler for creating users
+const createUserHandler = (req, res) => {
+  let data = "";
+  req.on("data", (chunk) => {
+    data += chunk;
+  });
+
+  req.on("end", () => {
+    const newUser = JSON.parse(data);
+    users.push(newUser);
+    res.statusCode = 201;
+    res.write(JSON.stringify(newUser));
+    res.end();
+  });
+};
+
 //user not found route handler
 const userNotFoundRouteHnadler = (req, res) => {
   res.statusCode = 404;
@@ -55,6 +73,8 @@ const server = http.createServer((req, res) => {
         req.method === "GET"
       ) {
         getUserByIdRouteHandler(req, res);
+      } else if (req.url === "/api/users" && req.method === "POST") {
+        createUserHandler(req, res);
       } else {
         userNotFoundRouteHnadler(req, res);
       }
