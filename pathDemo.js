@@ -17,5 +17,5 @@ const fileName = url.fileURLToPath(import.meta.url);
 const dirName = path.dirname(fileName);
 //join()
 
-const filepath = path.join(dirName, "dir1", "tesd.txt");
-console.log(filepath);
+const filePath2 = path.join(dirName, "dir1", "tesd.txt");
+console.log(filePath2);
