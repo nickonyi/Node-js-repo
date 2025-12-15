@@ -43,7 +43,7 @@ const writeFile = async () => {
 //appendfile
 const appendfile = async () => {
   try {
-    await fs.appendFile("./test.txt", " I am appending this file");
+    await fs.appendFile("./test.txt", "\nI am appending this file");
   } catch (error) {
     console.log(error);
   }
