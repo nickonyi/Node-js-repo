@@ -1,0 +1,23 @@
+{
+  "name": "node-js-repo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nickonyi/Node-js-repo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nickonyi/Node-js-repo/issues"
+  },
+  "homepage": "https://github.com/nickonyi/Node-js-repo#readme",
+  "dependencies": {
+    "express-validator": "^7.3.1"
+  }
+}
