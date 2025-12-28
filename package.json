@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/nickonyi/Node-js-repo#readme",
   "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.2.1",
     "express-validator": "^7.3.1"
   }
 }
