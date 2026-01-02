@@ -16,5 +16,5 @@ app.use("/", userRouter);
 const PORT = process.env.PORT || 3030;
 
 app.listen(PORT, () => {
-  console.log(`server Inakimbia jdjd kwenye porti ${PORT}`);
+  console.log(`server Inakimbia  kwenye porti ${PORT}`);
 });
