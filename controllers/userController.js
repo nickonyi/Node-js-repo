@@ -17,6 +17,7 @@ const validateUser = [
     .withMessage(`last name ${alphaErr}`)
     .isLength({ min: 1, max: 10 })
     .withMessage(`last name ${lengthErr}`),
+  body("email").isEmail().withMessage("Enter a valid email address"),
 ];
 
 export const usersListGet = (req, res) => {
@@ -42,8 +43,8 @@ export const usersCreatePost = [
       });
     }
 
-    const { firstName, lastName } = matchedData(req);
-    userStorage.addUser({ firstName, lastName });
+    const { firstName, lastName, email, age, bio } = matchedData(req);
+    userStorage.addUser({ firstName, lastName, email, age, bio });
     res.redirect("/");
   },
 ];
@@ -75,5 +76,5 @@ export const usersUpdatePost = [
 
 export const userDelete = (req, res) => {
   userStorage.deleteUser(req.params.id);
-  res.render("/");
+  res.redirect("/");
 };
