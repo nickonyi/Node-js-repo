@@ -1,5 +1,5 @@
 import { userStorage } from "../storage/userStorage.js";
-import { body, validationResult, matchedData } from "express-validator";
+import { body, validationResult, matchedData, query } from "express-validator";
 
 const alphaErr = " Must only contain alphabet errors";
 const lengthErr = "Must only be between 1 and 10 characters";
@@ -18,6 +18,14 @@ const validateUser = [
     .isLength({ min: 1, max: 10 })
     .withMessage(`last name ${lengthErr}`),
   body("email").isEmail().withMessage("Enter a valid email address"),
+  body("age")
+    .optional()
+    .isInt({ min: 18, max: 120 })
+    .withMessage("Age must be a number between 18 and 120"),
+  body("bio")
+    .optional()
+    .isLength({ max: 120 })
+    .withMessage("bio must be maximum 200 characters"),
 ];
 
 export const usersListGet = (req, res) => {
@@ -77,4 +85,29 @@ export const usersUpdatePost = [
 export const userDelete = (req, res) => {
   userStorage.deleteUser(req.params.id);
   res.redirect("/");
+};
+
+export const searchUser = (req, res) => {
+  //get the name from the query
+  const name = req.query.name;
+  //fetch the users
+  const people = userStorage.getUsers();
+  //check if the name matches any of the users in my list
+  const exists = people.filter(
+    (person) =>
+      person.firstName.toLowerCase() === name.toLowerCase() ||
+      person.lastName.toLowerCase() === name.toLowerCase()
+  );
+  if (!exists) {
+    return res.status(404).render("notFound", {
+      title: "User Not Found",
+      message: "The user you are trying to update does not exist.",
+      backLink: "/users",
+    });
+  }
+
+  res.render("search", {
+    query: name,
+    results: exists,
+  });
 };

@@ -6,10 +6,14 @@
   </head>
   <body>
     <h1><%= title %></h1>
+    <form action="/search" method="get">
+      <input type="text" name="name" id="name" placeholder="search a user by firstname or lastname"/>
+      <button type="submit">Submit</button>
+    </form>
     <ul>
       <% if (locals.users) {%> <% users.forEach(user => { %>
       <li>
-        ID: <%= user.id %>, Name: <%= user.firstName %> <%= user.lastName %>
+        ID: <%= user.id %>, Name: <%= user.firstName %> <%= user.lastName %>, Email:<%= user.email %>, Age:<%= user.age %>, bio:<%= user.bio %>
         <a href="/<%= user.id %>/update">Update</a>
         <!-- This time we're sending a POST request to our route, so we need a form. -->
         <form

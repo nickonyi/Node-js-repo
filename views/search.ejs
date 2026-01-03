@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Results</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .result {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+    .no-results {
+      color: #c0392b;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Search Results</h1>
+
+  <% if (query) { %>
+    <p>Results for "<strong><%= query %></strong>"</p>
+  <% } %>
+
+  <% if (results.length === 0) { %>
+    <p class="no-results">No results found.</p>
+  <% } else { %>
+    <ul>
+      <% results.forEach(person => { %>
+        <li class="result">
+          <%= person.firstName %> <%= person.lastName %> <%= person.email %> <%= person.bio %> <%= person.age %>
+        </li>
+      <% }) %>
+    </ul>
+  <% } %>
+
+</body>
+</html>
