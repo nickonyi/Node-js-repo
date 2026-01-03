@@ -6,7 +6,6 @@ import { userRouter } from "./routes/userRouter.js";
 
 const __fileName = url.fileURLToPath(import.meta.url);
 const __dirName = path.dirname(__fileName);
-console.log(__dirName);
 
 app.set("views", path.join(__dirName, "views"));
 app.set("view engine", "ejs");
