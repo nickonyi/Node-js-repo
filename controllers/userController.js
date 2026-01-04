@@ -98,6 +98,8 @@ export const searchUser = (req, res) => {
       person.firstName.toLowerCase() === name.toLowerCase() ||
       person.lastName.toLowerCase() === name.toLowerCase()
   );
+  console.log(exists);
+
   if (!exists) {
     return res.status(404).render("notFound", {
       title: "User Not Found",
